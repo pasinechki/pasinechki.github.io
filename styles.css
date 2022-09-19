@@ -58,7 +58,11 @@ hr {
     min-width: 350px;
     border-radius: 10px;
 }
-
+@media (min-width: 600px) {
+    .menu {
+        width:50%;
+    }
+}
 .drink {
     text-align: left;
     text-indent: 15px;
