@@ -14,12 +14,6 @@ body {
     font-family: Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
-.menu {
-    width: 82%;
-    min-width: 320px;
-    max-width: 600px;
-}
-
 h1 {
     text-align: center;
     margin: 2rem 0;
@@ -36,31 +30,52 @@ h1 {
     display:flex;
     margin: 30px auto;
 }
-.accordion {
+.menu {
     width: 90%;
-    max-width: 1000px;
+    max-width: 767px;
     margin: 2rem auto;
+    font-size: 20px;
 }
 
-.accordion-item {
+.section {
     background-color: rgba(245, 222, 179, 0.55);
     margin: 1rem 0;
     border-radius: 0.5rem;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.25);
 }
 
-.accordion-item-header {
-    padding: 0.5rem 3rem 0.5rem 1rem;
-    min-height: 3.5rem;
-    line-height: 1.25rem;
-    font-weight: bold;
+.section-name {
+    height: 100%;
+}
+
+.section-header {
+    padding: 1.5rem 3rem 1.5rem 1rem;
+    font-size: 30px;
+    line-height: 1.5rem;
+    font-weight: 550;
     display: flex;
     align-items: center;
     position: relative;
     cursor: pointer;
+    /* border: solid red; */
+}
+.header {
+    display: block;
+    max-width: 50%;
+    line-height: 20px;
 }
 
-.accordion-item-header::after {
+@media(max-width: 767px) {
+    .section-header {
+        padding: 1rem 3rem 1rem 1rem;
+        font-size: 25px;
+    }
+    .menu {
+        font-size: 17px;
+    }
+}
+
+.section-header::after {
     content: "\002B";
     margin-bottom: 5px;;
     font-size: 2rem;
@@ -69,49 +84,46 @@ h1 {
     transition: transform 0.2s ease-in-out;
 }
 
-.accordion-item-header.mid::after {
+.section-header.mid::after {
     font-size: 2rem;
     position: absolute;
     right: 1rem;
     transform: rotate(180deg);
 }
 
-.accordion-item-header.active::after {
+.section-header.active::after {
     margin-bottom: -1px;
     content: "\2212";
 }
 
-.accordion-item-body {
+.section-body {
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.2s ease-out;
+    /* border: solid red; */
 }
-.accordion-item-body-content {
+.product {
     margin-top: -25px;
     padding: 1rem;
     line-height: 1.5rem;
 }
-.accordion-item-body-content-first {
-    padding: 1rem;
+
+.line{
+    padding: 0.5rem;
     line-height: 1.5rem;
     border-top: 2px solid;
     border-image: linear-gradient(to right, transparent, rgba(82, 84, 86), transparent) 1;
 }
 
-.accordion-item-header.active + .accordion-item-body {
+.section-header.active + .section-body {
     max-height: 200px;
 }
 
-@media(max-width: 767px) {
-    .accordion-item-header {
-        font-size: 25px;
-    }
-}
 p {
     display: inline-block;
 }
 
-.product {
+.product-name {
     width: 65%;
     text-align: left;
 }
@@ -124,4 +136,3 @@ p {
     max-width: 4%;
     text-align: right;
 }
-
