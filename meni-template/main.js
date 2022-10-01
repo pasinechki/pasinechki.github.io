@@ -1,14 +1,14 @@
-const accordionItemHeaders = document.querySelectorAll(".accordion-item-header");
+const sectionHeaders = document.querySelectorAll(".section-header");
 
-accordionItemHeaders.forEach(accordionItemHeader => {
-    accordionItemHeader.addEventListener("click", event => {
-        accordionItemHeader.classList.toggle("mid");
-        accordionItemHeader.classList.toggle("active");
-        const accordionItemBody = accordionItemHeader.nextElementSibling;
-        if (accordionItemHeader.classList.contains("active")) {
-            accordionItemBody.style.maxHeight = accordionItemBody.scrollHeight + "px";
+sectionHeaders.forEach(sectionHeader => {
+    sectionHeader.addEventListener("click", event => {
+        sectionHeader.classList.toggle("mid");
+        sectionHeader.classList.toggle("active");
+        const sectionHeaderBody = sectionHeader.nextElementSibling;
+        if (sectionHeader.classList.contains("active")) {
+            sectionHeaderBody.style.maxHeight = sectionHeaderBody.scrollHeight + "px";
         } else {
-            accordionItemBody.style.maxHeight = 0;
+            sectionHeaderBody.style.maxHeight = 0;
         }
     });
 });
