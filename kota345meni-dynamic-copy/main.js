@@ -18,6 +18,9 @@ initiateHtml(workbook);
 
 let langIcon = document.getElementById('lang-icon');
 langIcon.addEventListener('click', event => {
+    let click = document.createElement('audio');
+    click.setAttribute('src', 'click.wav');
+    click.play();
     langIcon.animate([{ maxWidth: '8%' }, { maxWidth: '7.8%' }], 300);
     langIcon.animate([{ boxShadow: '0 4px 7px 0 rgba(0, 0, 0, 0.785)' }, { boxShadow: '0 2px 4px 0 rgba(0, 0, 0, 0.785)' }], 300);
     setSrcToLangIcon();
