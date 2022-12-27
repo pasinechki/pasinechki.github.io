@@ -1,10 +1,19 @@
 import './xlsx.full.min.js';
 
+let sessionCount = sessionStorage.getItem('count');
 let path = 'products-excel'
 var url = "meni-produkti.xlsx";
+
 saveExcelToSessionStorage(url, path);
+
+if (sessionCount === null) {
+    sessionStorage.setItem('count', 42);
+    location.reload();
+} 
+
 let workbook = JSON.parse(sessionStorage.getItem(path));
 initiateHtml(workbook);
+
 
 let langIcon = document.getElementById('lang-icon');
 langIcon.addEventListener('click', event => {
